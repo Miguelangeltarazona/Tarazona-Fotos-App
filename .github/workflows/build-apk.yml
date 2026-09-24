@@ -54,6 +54,15 @@ jobs:
           name: Tarazona-Fotos-App-V2
           path: proyecto/apkwork/app/build/outputs/apk/debug/app-debug.apk
       - name: Compilar APK
+        working-directory: proyecto/apkwork
+        run: gradle assembleDebug --no-daemon
+
+      - name: Guardar APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Tarazona-Fotos-App-V2
+          path: proyecto/apkwork/app/build/outputs/apk/debug/app-debug.apk
+      - name: Compilar APK
         working-directory: proyecto
         run: gradle assembleDebug --no-daemon
 
