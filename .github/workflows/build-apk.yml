@@ -1,9 +1,10 @@
  name: Construir Tarazona Fotos APK
 
-"on":
+on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   build:
@@ -16,7 +17,7 @@ jobs:
       - name: Preparar Java
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
+          distribution: temurin
           java-version: '17'
 
       - name: Preparar Android
