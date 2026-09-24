@@ -13,13 +13,15 @@ jobs:
       - name: Descargar proyecto
         uses: actions/checkout@v4
 
-      - name: Preparar Java
+      - name: Preparar 
+      Java
         uses: 
       actions/setup-java@v4
         with:
           distribution: 
       'temurin'
-          java-version: '17'
+          java-version: 
+      '17'
 
       - name: Preparar Android
         uses: android-actions/setup-android@v3
