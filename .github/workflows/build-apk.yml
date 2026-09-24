@@ -1,4 +1,4 @@
-name: Construir Tarazona Fotos APK
+ name: Construir Tarazona Fotos APK
 
 on:
   workflow_dispatch:
