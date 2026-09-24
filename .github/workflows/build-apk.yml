@@ -1,4 +1,4 @@
-name: Construir Tarazona Fotos APK
+ name: Construir Tarazona Fotos APK
 
 on:
   workflow_dispatch:
@@ -30,11 +30,20 @@ jobs:
         with:
           gradle-version: '8.9'
 
-      - name: Descomprimir proyecto
+      - name: Descomprimir proyecto V2 rehecho
         run: |
           mkdir proyecto
-          unzip Tarazona_Fotos_APK_V2.zip -d proyecto
+          unzip Tarazona_Fotos_APK_V2_REHECHA.zip -d proyecto
 
+      - name: Compilar APK
+        working-directory: proyecto/apkwork
+        run: gradle assembleDebug --no-daemon
+
+      - name: Guardar APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Tarazona-Fotos-App-V2
+          path: proyecto/apkwork/app/build/outputs/apk/debug/app-debug.apk
       - name: Compilar APK
         working-directory: proyecto
         run: gradle assembleDebug --no-daemon
