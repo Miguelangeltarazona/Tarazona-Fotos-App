@@ -38,12 +38,12 @@ jobs:
           find proyecto -maxdepth 3 -type f | sort
 
       - name: Compilar APK
-        run: |
-          cd proyecto/apkwork
-          gradle assembleDebug --no-daemon
+  run: |
+    cd proyecto/tarazona_v2_fixed
+    gradle assembleDebug --no-daemon
 
       - name: Guardar APK
         uses: actions/upload-artifact@v4
         with:
           name: Tarazona-Fotos-App-V2
-          path: proyecto/apkwork/app/build/outputs/apk/debug/app-debug.apk
+path: proyecto/tarazona_v2_fixed/app/build/outputs/apk/debug/app-debug.apk
