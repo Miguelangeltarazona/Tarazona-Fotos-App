@@ -1,6 +1,6 @@
  name: Construir Tarazona Fotos APK
 
-on:
+"on":
   workflow_dispatch:
   push:
     branches: [ main ]
